@@ -197,18 +197,27 @@ This is a **production-ready, self-contained functional framework** for building
 - **Tech shown**: Node.js + Baileys (WhatsApp), Grok CLI integration, custom agent/skill framework (MCP-style), Docker-ready.
 - **Use cases**: Customer support on legacy e-commerce (Play/Java), banking notifications, internal automations, data enrichment from old systems.
 
-**Quick start (after clone):**
+**Quick Start (after clone):**
+
 1. `npm install`
-2. Run `node index.js` — scan QR with WhatsApp.
-3. Send messages; bot uses custom agent `whatsapp-responder` + skills.
-4. Extend by editing `.grok/agents/*.md` and `.grok/skills/*/SKILL.md`.
+2. `npm start` (or `node index.js`)
+3. Scan the QR Code that appears with your WhatsApp (WhatsApp → Linked Devices).
+4. The bot will log "Conectado ao WhatsApp!" and start listening.
+5. Send messages — it will reply using the custom `whatsapp-responder` agent + skills.
+
+The `auth/` folder stores the session (no need to scan again after restart).
 
 **Run tests:**
 ```bash
 npm test
 ```
 
-(See the "Running the tests" section above for details.)
+See the dedicated "Running the tests / Executando os testes" section for more.
+
+**Extend for your legacy systems:**
+- Add skills like `legacy-query` (included) for querying old Java/Play/Scala backends.
+- Integrate with Kafka/Flink events, Elasticsearch, Azure, etc.
+- Use as template for any channel (email, internal tools).
 
 **Deploy**:
 - Docker: `docker build -t whatsapp-grok-bot . && docker run --env-file .env whatsapp-grok-bot`
