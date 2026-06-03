@@ -95,13 +95,13 @@ After=network.target
 
 [Service]
 Type=simple
-User=iva
-WorkingDirectory=/home/iva/whatsapp-grok-bot
-ExecStart=/usr/bin/node /home/iva/whatsapp-grok-bot/index.js
+User=youruser
+WorkingDirectory=/home/youruser/whatsapp-grok-bot
+ExecStart=/usr/bin/node /home/youruser/whatsapp-grok-bot/index.js
 Restart=always
 RestartSec=10
 Environment=NODE_ENV=production
-Environment=PATH=/home/iva/.grok/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PATH=/home/youruser/.grok/bin:/usr/local/bin:/usr/bin:/bin
 # O bot já controla o cwd interno ao chamar o Grok, então as definições em .grok/ do projeto são usadas automaticamente.
 
 [Install]
