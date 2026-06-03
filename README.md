@@ -164,3 +164,33 @@ No Grok TUI ou headless:
 - Usar Grok via MCP ou API se disponível no futuro.
 
 Boa sorte! Se precisar de ajustes no bot, skill ou agent, me avise.
+---
+
+## English Summary (for international clients)
+
+This is a **production-ready, self-contained functional framework** for building AI agents that integrate with existing (often legacy) systems via WhatsApp or other channels.
+
+- **Core value demonstrated**: Custom Grok agents + skills that are portable, versionable, and deployable. The "brain" (agent definitions + skills) travels with the app in `.grok/`.
+- **Ties to Code Solutions services**: Directly shows "Criação de agentes profissionais de IA (bots WhatsApp integrados com Grok/Claude/ChatGPT, automações de workflow, integração de LLMs em sistemas legados)".
+- **Tech shown**: Node.js + Baileys (WhatsApp), Grok CLI integration, custom agent/skill framework (MCP-style), Docker-ready.
+- **Use cases**: Customer support on legacy e-commerce (Play/Java), banking notifications, internal automations, data enrichment from old systems.
+
+**Quick start (after clone):**
+1. `npm install`
+2. Run `node index.js` — scan QR with WhatsApp.
+3. Send messages; bot uses custom agent `whatsapp-responder` + skills.
+4. Extend by editing `.grok/agents/*.md` and `.grok/skills/*/SKILL.md`.
+
+**Deploy**:
+- Docker: `docker build -t whatsapp-grok-bot . && docker run --env-file .env whatsapp-grok-bot`
+- Or PM2/systemd as described.
+
+**Extend for your legacy systems**:
+- Add skills like `legacy-query` (included) for querying old Java/Play/Scala backends.
+- Integrate with Kafka/Flink events, Elasticsearch, Azure, etc.
+- Use as template for any channel (email, internal tools).
+
+See the full Code Solutions site for more examples and services: https://ivamartins.github.io/code-solutions-site/
+
+This project is maintained as a live example of the AI agents and legacy modernization services offered via Code Solutions (independent consulting company).
+

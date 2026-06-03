@@ -1,15 +1,31 @@
 {
   "name": "whatsapp-grok-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Self-contained WhatsApp bot using Grok with custom agents and skills. Functional example of production-ready AI agents for system integrations and automations.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "docker:build": "docker build -t whatsapp-grok-bot .",
+    "docker:run": "docker run --env-file .env -p 3000:3000 whatsapp-grok-bot"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "whatsapp",
+    "grok",
+    "ai-agents",
+    "llm",
+    "automation",
+    "legacy-systems",
+    "integration",
+    "baileys"
+  ],
+  "author": "Ivã Martins / Code Solutions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivamartins/whatsapp-grok-bot.git"
+  },
+  "homepage": "https://ivamartins.github.io/code-solutions-site/",
   "dependencies": {
     "@whiskeysockets/baileys": "^7.0.0-rc13",
     "qrcode-terminal": "^0.12.0"
