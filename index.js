@@ -142,6 +142,10 @@ async function startBot() {
   return sock;
 }
 
-// Start
-console.log('Iniciando WhatsApp + Grok bot...');
-startBot().catch(console.error);
+// Start only if run directly (not when required as module for tests)
+if (require.main === module) {
+  console.log('Iniciando WhatsApp + Grok bot...');
+  startBot().catch(console.error);
+}
+
+module.exports = { startBot, generateReplyWithGrok };
