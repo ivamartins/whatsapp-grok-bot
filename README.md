@@ -131,6 +131,28 @@ nohup npm start > bot.log 2>&1 &
 
 A pasta `auth/` guarda a sessão (não precisa escanear de novo depois de reiniciar).
 
+## Running the tests / Executando os testes
+
+**Português:**
+
+```bash
+npm test
+```
+
+(Se os node_modules não estiverem presentes: `npm install` primeiro.)
+
+Testes usam Mocha + assert. Verificam carregamento do módulo sem iniciar o bot real (guard `require.main`), estrutura do projeto e presença dos agents/skills. Rápidos e não requerem WhatsApp nem Grok rodando.
+
+**English:**
+
+```bash
+npm test
+```
+
+(Run `npm install` first if node_modules are missing.)
+
+Tests use Mocha. They verify safe module loading (without auto-starting the real bot thanks to a `require.main` guard), project structure, and that agents/skills are present. Fast and require neither a WhatsApp connection nor the Grok CLI.
+
 ## Personalização (cérebro)
 
 - As definições do cérebro (agent + skill) estão **dentro do projeto** em:
@@ -180,6 +202,13 @@ This is a **production-ready, self-contained functional framework** for building
 2. Run `node index.js` — scan QR with WhatsApp.
 3. Send messages; bot uses custom agent `whatsapp-responder` + skills.
 4. Extend by editing `.grok/agents/*.md` and `.grok/skills/*/SKILL.md`.
+
+**Run tests:**
+```bash
+npm test
+```
+
+(See the "Running the tests" section above for details.)
 
 **Deploy**:
 - Docker: `docker build -t whatsapp-grok-bot . && docker run --env-file .env whatsapp-grok-bot`
