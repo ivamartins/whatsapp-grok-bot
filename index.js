@@ -4,6 +4,7 @@ const { spawn } = require('child_process');
 const path = require('path');
 
 // === CONFIG ===
+// EN: Project root for self-contained Grok agents/skills. PT: Raiz do projeto para agents/skills do Grok auto-contidos.
 const BOT_DIR = __dirname; // Project root - Grok will prefer .grok/ here for agents/skills
 const GROK_BIN = process.env.GROK_BIN || 'grok'; // Set to full path e.g. /home/iva/.grok/bin/grok or leave as 'grok' if in PATH
 const USE_WHATSAPP_AGENT = 'whatsapp-responder'; // our custom agent (will be found via project .grok/ or user ~/.grok/)
