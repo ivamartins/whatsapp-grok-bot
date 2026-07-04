@@ -1,5 +1,9 @@
 # WhatsApp + Grok Bot
 
+[![CI](https://github.com/ivamartins/whatsapp-grok-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/ivamartins/whatsapp-grok-bot/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/Node-20%2B-green)](https://nodejs.org/)
+
 > Historical variant of [whatsapp-llm-bot](https://github.com/ivamartins/whatsapp-llm-bot). Demonstrates the **Grok CLI** integration with custom agent + skill (defined inside the project). Kept as a reference for `spawn`-based LLM integrations.
 
 Bot that listens to WhatsApp messages and uses **Grok with custom agent + skills** to generate intelligent replies automatically.
