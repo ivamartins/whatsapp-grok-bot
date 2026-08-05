@@ -1,0 +1,31 @@
+name: Stale Issues & PRs
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark stale issues and PRs
+        uses: actions/stale@v9
+        with:
+          issues-only-close-comment: |
+            Esta issue foi fechada por inatividade. Se ainda for relevante, abra uma nova issue com contexto atualizado.
+          issues-stale-issue-message: |
+            Esta issue está inativa há 30 dias. Será fechada em 7 dias se não houver atividade.
+          pull-requests-only-close-comment: |
+            Este PR foi fechado por inatividade. Reabra se ainda for relevante.
+          days-before-issue-stale: 30
+          days-before-pr-stale: 30
+          days-before-issue-close: 7
+          days-before-pr-close: 7
+          exempt-issue-labels: "pinned,security,priority:high"
+          exempt-pr-labels: "pinned,security,priority:high"
+          operations-per-run: 50

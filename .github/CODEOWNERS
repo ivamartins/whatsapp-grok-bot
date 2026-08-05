@@ -1,0 +1,19 @@
+# CODEOWNERS
+# Documentação: https://docs.github.com/pt/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner
+*       @ivamartins
+
+# Código principal (mais sensível)
+index.js        @ivamartins
+/lib/           @ivamartins
+/src/           @ivamartins
+
+# Configuração de build, CI e Docker
+/package.json   @ivamartins
+/Dockerfile     @ivamartins
+/.github/       @ivamartins
+/.env.example   @ivamartins
+
+# Documentação
+*.md            @ivamartins
